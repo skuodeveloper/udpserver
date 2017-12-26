@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+	<!-- 引入外部的配置文件 -->
+	<properties resource="jdbc.properties"/>
+
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+	</settings>
+
+	<!-- 配置自定义的typehandler -->
+	<!--<typeHandlers>-->
+	    <!--<typeHandler handler="com.nhga.spring.mybatis.hander.SexTypeHandler"-->
+	    	<!--javaType="java.lang.String" jdbcType="TINYINT"/>-->
+	<!--</typeHandlers>-->
+	
+	<!--<plugins>-->
+		<!--<plugin interceptor="com.demo.mybatis.java.interceptor.CameHumpInterceptor"/>-->
+	<!--</plugins>-->
+	
+	<!-- 指定环境,environment 元素体中包含对事 务管理和连接池的环境配置 -->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driver}" />
+				<property name="url" value="${jdbc.url}" />
+				<property name="username" value="${jdbc.username}" />
+				<property name="password" value="${jdbc.password}" />
+			</dataSource>
+		</environment>
+	</environments>
+
+	<mappers>
+		<mapper resource="mappers/MacMapper.xml" />
+	</mappers>
+	
+</configuration>

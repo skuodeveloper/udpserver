@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.nhga.wifimac.mapper.MacMapper">
+    <insert id="addMac" parameterType="com.nhga.wifimac.bean.WifiMac">
+
+		INSERT INTO wifimac
+			( ID, CMAC, SMAC, DMAC, ZZLX, FZLX, XD, XXQD, RDMC, ZDSFXM, ISLYQ )
+		VALUES
+			( null,
+			  #{CMAC,jdbcType=VARCHAR,javaType=String},
+			  #{SMAC,jdbcType=VARCHAR,javaType=String},
+			  #{DMAC,jdbcType=VARCHAR,javaType=String},
+			  #{ZZLX,jdbcType=VARCHAR,javaType=String},
+			  #{FZLX,jdbcType=VARCHAR,javaType=String},
+			  #{XD,jdbcType=VARCHAR,javaType=String},
+			  #{XXQD,jdbcType=VARCHAR,javaType=String},
+			  #{RDMC,jdbcType=VARCHAR,javaType=String},
+			  #{ZDSFXM,jdbcType=VARCHAR,javaType=String},
+			  #{ISLYQ,jdbcType=VARCHAR,javaType=String})
+	</insert>
+</mapper>

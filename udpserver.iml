@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module org.jetbrains.idea.maven.project.MavenProjectsManager.isMavenModule="true" type="JAVA_MODULE" version="4">
+  <component name="FacetManager">
+    <facet type="Spring" name="Spring">
+      <configuration />
+    </facet>
+  </component>
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
+    <output url="file://$MODULE_DIR$/../udpserver/target/classes" />
+    <output-test url="file://$MODULE_DIR$/../udpserver/target/test-classes" />
+    <content url="file://$MODULE_DIR$/../udpserver">
+      <sourceFolder url="file://$MODULE_DIR$/../udpserver/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../udpserver/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../udpserver/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/../udpserver/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="Maven: org.mybatis:mybatis:3.4.5" level="project" />
+    <orderEntry type="library" name="Maven: MySQL:mysql-connector-Java:5.1.38" level="project" />
+    <orderEntry type="library" name="Maven: log4j:log4j:1.2.17" level="project" />
+  </component>
+</module>
