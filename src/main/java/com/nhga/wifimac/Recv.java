@@ -13,6 +13,8 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.SocketException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Recv {
     private static final int DEFAULT_PORT = 6000;
@@ -35,6 +37,9 @@ public class Recv {
                 wifiMac.setCMAC(res[0]);//采集器的MAC地址
 
                 for (int i = 1; i < res.length; i++) {
+                    if (res.length < 9)
+                        continue;
+
                     String arr[] = res[i].split("\\|");
                     wifiMac.setSMAC(arr[0]);//源MAC
                     wifiMac.setDMAC(arr[1]);//目的MAC
@@ -46,6 +51,10 @@ public class Recv {
                     wifiMac.setZDSFXM(arr[7]);//终端是否休眠
                     wifiMac.setISLYQ(arr[8]);//源MAC是否为路由器
 
+                    Date now = new Date();
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//可以方便地修改日期格式
+                    wifiMac.setSJ(dateFormat.format(now));
+
                     addMac(wifiMac);
                 }
                 //返回一个字节给探针设备
@@ -56,13 +65,13 @@ public class Recv {
             }
         } catch (SocketException e) {
             System.out.println("1.debug!" + "\n\n");
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (IOException e) {
             System.out.println("2.debug!" + "\n\n");
-            //e.printStackTrace();
+            e.printStackTrace();
         } catch (Exception e) {
             System.out.println("3.debug!" + "\n\n");
-            //e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
@@ -85,7 +94,7 @@ public class Recv {
 
         } catch (Exception ex) {
             System.out.println("4.debug!" + "\n\n");
-            //System.out.println(ex);
+            System.out.println(ex);
         }
     }
 }

@@ -12,6 +12,15 @@ public class WifiMac {
     private String RDMC;
     private String ZDSFXM;
     private String ISLYQ;
+    private String SJ;
+
+    public String getSJ() {
+        return SJ;
+    }
+
+    public void setSJ(String SJ) {
+        this.SJ = SJ;
+    }
 
     public int getId() {
         return id;

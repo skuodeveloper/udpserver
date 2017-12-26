@@ -6,7 +6,7 @@
     <insert id="addMac" parameterType="com.nhga.wifimac.bean.WifiMac">
 
 		INSERT INTO wifimac
-			( ID, CMAC, SMAC, DMAC, ZZLX, FZLX, XD, XXQD, RDMC, ZDSFXM, ISLYQ )
+			( ID, CMAC, SMAC, DMAC, ZZLX, FZLX, XD, XXQD, RDMC, ZDSFXM, ISLYQ, SJ )
 		VALUES
 			( null,
 			  #{CMAC,jdbcType=VARCHAR,javaType=String},
@@ -18,6 +18,7 @@
 			  #{XXQD,jdbcType=VARCHAR,javaType=String},
 			  #{RDMC,jdbcType=VARCHAR,javaType=String},
 			  #{ZDSFXM,jdbcType=VARCHAR,javaType=String},
-			  #{ISLYQ,jdbcType=VARCHAR,javaType=String})
+			  #{ISLYQ,jdbcType=VARCHAR,javaType=String},
+			  #{SJ,jdbcType=VARCHAR,javaType=String})
 	</insert>
 </mapper>
